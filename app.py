@@ -8,8 +8,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_huggingface import HuggingFacePipeline
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.schema.runnable import RunnablePassthrough
-from langchain.schema.output_parser import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
 
 from transformers import pipeline
 
@@ -28,7 +28,7 @@ st.write("Ask questions from your PDF")
 @st.cache_resource
 def load_docs():
 
-    loader = PyPDFLoader("data/file.pdf")   # 👈 change name
+    loader = PyPDFLoader("data/how_hackers_hack_systems_full_pages.pdf")   # 👈 change name
     pages = loader.load()
 
     splitter = RecursiveCharacterTextSplitter(
