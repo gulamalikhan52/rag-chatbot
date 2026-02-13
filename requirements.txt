@@ -8,3 +8,5 @@ pypdf
 transformers
 sentence-transformers
 torch
+langchain-core
+accelerate
